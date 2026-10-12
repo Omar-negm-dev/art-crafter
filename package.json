@@ -1,0 +1,11 @@
+{
+  "name": "art-crafter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dependency-free browser-based raster graphics editor with editable layers, filters, and project files.",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node --check app.js && node --check core.js && node --test tests/*.test.cjs"
+  },
+  "engines": {"node": ">=20"}
+}

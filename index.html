@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#12151d"/>
+  <meta name="description" content="Art Crafter — an independent layer-based creative image editor with professional drawing and export tools."/>
+  <title>Art Crafter — Creative workspace</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 24 24"><path d="M3 19 12 3l9 16H3Zm6.1-2.8h5.8L12 10.6l-2.9 5.6Z" fill="currentColor"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M4 3 20 12l-7 1-3 7-6-17Z"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="m14 14 7-9a2.5 2.5 0 0 0-4-3l-8 9"/><path d="M10 13c-2 0-4 2-4 4 0 2-1 3-4 4 5 2 9-1 9-5 0-1-.5-2-1-3Z"/></symbol>
+  <symbol id="i-eraser" viewBox="0 0 24 24"><path d="m3 15 10-11a3 3 0 0 1 4 0l5 5a3 3 0 0 1 0 4l-8 8H8l-5-5a1 1 0 0 1 0-1Z"/><path d="m8 10 9 9M14 21h8"/></symbol>
+  <symbol id="i-select" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1" stroke-dasharray="3 3"/></symbol>
+  <symbol id="i-rect" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1"/></symbol>
+  <symbol id="i-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path d="M4 20 20 4"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M4 6V4h16v2M12 4v16m-4 0h8"/></symbol>
+  <symbol id="i-dropper" viewBox="0 0 24 24"><path d="m4 17 11-11m-2-2 5-2 4 4-2 5M4 17l-2 5 5-2 9-9"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M9 12V5a2 2 0 0 1 4 0v5-7a2 2 0 0 1 4 0v7-5a2 2 0 0 1 4 0v9c0 4-3 7-7 7h-2c-4 0-5-3-9-7a2 2 0 0 1 3-3l3 3"/></symbol>
+  <symbol id="i-crop" viewBox="0 0 24 24"><path d="M5 2v16a2 2 0 0 0 2 2h15M2 5h16a2 2 0 0 1 2 2v15"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 20V8M7 13l5-5 5 5M4 7V3h16v4"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 7 3 12l6 5M3 12h11c7 0 8 8 3 9"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="m15 7 6 5-6 5m6-5H10c-7 0-8 8-3 9"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12c3-5 6-7 10-7s7 2 10 7c-3 5-6 7-10 7S5 17 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M2 12c3-5 6-7 10-7 3 0 5 1 7 3m3 4c-3 5-6 7-10 7-3 0-5-1-7-3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 6h16M9 6V3h6v3m3 0-1 15H7L6 6m4 4v7m4-7v7"/></symbol>
+  <symbol id="i-duplicate" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M20 12c0-.8-.1-1.5-.3-2.2l2-1.5-2-3.4-2.4.8a8 8 0 0 0-3.4-2L13.5 1h-4L9 3.7a8 8 0 0 0-3.4 2l-2.4-.8-2 3.4 2 1.5a8 8 0 0 0 0 4.4l-2 1.5 2 3.4 2.4-.8a8 8 0 0 0 3.4 2l.5 2.7h4l.5-2.7a8 8 0 0 0 3.4-2l2.4.8 2-3.4-2-1.5c.2-.7.3-1.4.3-2.2Z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 6-10 6L2 8l10-6Zm10 11-10 6L2 13m20 5-10 6-10-6"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="8" cy="9" r="2"/><path d="m3 19 6-6 4 4 3-3 5 5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+  <symbol id="i-max" viewBox="0 0 24 24"><path d="M3 9V3h6m6 0h6v6M3 15v6h6m6 0h6v-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 14 7-7 7 7"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="m5 10 7 7 7-7"/></symbol>
+</svg>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark"><svg><use href="#i-logo"/></svg></div><span>ART<span class="brand-accent">CRAFTER</span></span><span class="brand-tag">STUDIO</span></div>
+  <button class="top-btn icon-button mobile-menu-btn" id="mobileMenuBtn" title="Workspace menu" aria-label="Workspace menu"><svg><use href="#i-menu"/></svg></button>
+  <span class="top-divider"></span>
+  <div class="document-label"><span class="live-dot"></span><input id="docTitle" aria-label="Document name" value="Untitled canvas" maxlength="90"/><span class="file-status" id="saveStatus">Unsaved project</span></div>
+  <div class="top-spacer"></div>
+  <div class="top-actions">
+    <button class="top-btn top-btn-text" id="newBtn"><svg><use href="#i-plus"/></svg><span>New</span></button>
+    <button class="top-btn top-btn-text" id="openBtn"><svg><use href="#i-upload"/></svg><span>Open</span></button>
+    <span class="top-divider narrow"></span>
+    <button class="top-btn icon-button" id="undoBtn" title="Undo (Ctrl+Z)" aria-label="Undo"><svg><use href="#i-undo"/></svg></button>
+    <button class="top-btn icon-button" id="redoBtn" title="Redo (Ctrl+Shift+Z)" aria-label="Redo"><svg><use href="#i-redo"/></svg></button>
+    <button class="top-btn top-btn-text desktop-only" id="saveBtn" title="Save editable Art Crafter project"><svg><use href="#i-download"/></svg><span>Save project</span></button>
+    <button class="top-btn primary-btn" id="exportBtn"><svg><use href="#i-download"/></svg><span>Export</span></button>
+  </div>
+</header>
+<div class="app-shell">
+  <nav class="toolrail" aria-label="Editing tools">
+    <span class="rail-label">TOOLS</span>
+    <button class="tool selected" data-tool="move" title="Move layer (V)" aria-label="Move layer"><svg><use href="#i-cursor"/></svg><span>V</span></button>
+    <button class="tool" data-tool="select" title="Rectangular selection (M)" aria-label="Rectangular selection"><svg><use href="#i-select"/></svg><span>M</span></button>
+    <span class="rail-sep"></span>
+    <button class="tool" data-tool="brush" title="Brush (B)" aria-label="Brush"><svg><use href="#i-brush"/></svg><span>B</span></button>
+    <button class="tool" data-tool="eraser" title="Eraser (E)" aria-label="Eraser"><svg><use href="#i-eraser"/></svg><span>E</span></button>
+    <button class="tool" data-tool="eyedropper" title="Eyedropper (I)" aria-label="Eyedropper"><svg><use href="#i-dropper"/></svg><span>I</span></button>
+    <span class="rail-sep"></span>
+    <button class="tool" data-tool="rectangle" title="Rectangle (U)" aria-label="Rectangle"><svg><use href="#i-rect"/></svg><span>U</span></button>
+    <button class="tool" data-tool="ellipse" title="Ellipse (O)" aria-label="Ellipse"><svg><use href="#i-circle"/></svg><span>O</span></button>
+    <button class="tool" data-tool="line" title="Line (L)" aria-label="Line"><svg><use href="#i-line"/></svg><span>L</span></button>
+    <button class="tool" data-tool="text" title="Text (T)" aria-label="Text"><svg><use href="#i-text"/></svg><span>T</span></button>
+    <span class="rail-sep"></span>
+    <button class="tool" data-tool="hand" title="Pan workspace (H or Space)" aria-label="Pan workspace"><svg><use href="#i-hand"/></svg><span>H</span></button>
+    <div class="rail-bottom"><button class="tool rail-help" id="shortcutsBtn" title="Keyboard shortcuts">?</button></div>
+  </nav>
+  <main class="editor-area">
+    <section class="options-bar" aria-label="Active tool properties">
+      <div class="options-heading"><span class="options-label">ACTIVE TOOL</span><strong id="activeToolLabel">Move layer</strong></div>
+      <div class="opts-divider"></div>
+      <div class="option"><label for="colorInput">COLOR</label><div class="color-control"><input type="color" id="colorInput" value="#f17256" title="Drawing color"/><span id="colorHex">#F17256</span></div></div>
+      <div class="option size-option"><label for="sizeInput" id="sizeLabel">SIZE</label><input type="range" id="sizeInput" min="1" max="100" value="18"/><span id="sizeValue" class="range-value">18</span></div>
+      <div class="option"><label for="shapeFill">FILL SHAPE</label><label class="toggle"><input type="checkbox" id="shapeFill"/><span class="toggle-knob"></span></label></div>
+      <div class="option option-font"><label for="fontSelect">FONT</label><select id="fontSelect"><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Verdana">Verdana</option><option value="Courier New">Mono</option><option value="Impact">Impact</option></select></div>
+      <div class="opts-spacer"></div>
+      <button class="subtle-button" id="fitBtn"><svg><use href="#i-max"/></svg>Fit</button>
+    </section>
+    <div class="workspace" id="workspace" aria-label="Canvas workspace">
+      <div class="workspace-grid"></div>
+      <div class="workspace-inner" id="workspaceInner">
+        <div class="artboard" id="artboard">
+          <canvas id="mainCanvas" width="1200" height="800" aria-label="Art Crafter image editing canvas"></canvas>
+          <canvas id="overlayCanvas" width="1200" height="800" aria-hidden="true"></canvas>
+        </div>
+      </div>
+      <div class="workspace-hint"><span class="hint-dot"></span><span id="canvasHint">Drag to reposition the selected layer</span></div>
+      <div class="zoom-controls"><button id="zoomOut" title="Zoom out" aria-label="Zoom out"><svg><use href="#i-minus"/></svg></button><span id="zoomLabel">100%</span><button id="zoomIn" title="Zoom in" aria-label="Zoom in"><svg><use href="#i-plus"/></svg></button><span class="zoom-split"></span><button id="resetZoom" title="Actual size">1:1</button></div>
+    </div>
+    <footer class="statusbar"><div><span class="status-pulse"></span><span id="statusText">Ready to create</span></div><div class="footer-right"><span id="cursorPos">X: — &nbsp; Y: —</span><span class="foot-sep"></span><span id="docInfo">1200 × 800 px</span><span class="foot-sep"></span><span id="layerCount">3 layers</span></div></footer>
+  </main>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-tabs"><button class="sidebar-tab active" data-tab="layers"><svg><use href="#i-layers"/></svg>Layers</button><button class="sidebar-tab" data-tab="adjustments"><svg><use href="#i-settings"/></svg>Adjust</button><button class="sidebar-tab" data-tab="history"><svg><use href="#i-undo"/></svg>History</button></div>
+    <div class="sidebar-content panel-visible" id="tab-layers">
+      <div class="panel-header"><div><span class="overline">COMPOSITION</span><h3>Layers</h3></div><button class="panel-action" id="addLayerBtn" title="Add raster layer"><svg><use href="#i-plus"/></svg></button></div>
+      <div class="layers-list" id="layersList"></div>
+      <div class="layer-actions"><button title="Duplicate layer" id="duplicateLayerBtn"><svg><use href="#i-duplicate"/></svg></button><button title="Move layer up" id="layerUpBtn"><svg><use href="#i-arrow-up"/></svg></button><button title="Move layer down" id="layerDownBtn"><svg><use href="#i-arrow-down"/></svg></button><button title="Delete selected layer" id="deleteLayerBtn"><svg><use href="#i-trash"/></svg></button></div>
+      <div class="panel-divider"></div>
+      <div class="property-block"><div class="prop-header"><label for="opacityInput">Layer opacity</label><span id="opacityVal">100%</span></div><input id="opacityInput" type="range" min="0" max="100" value="100"/></div>
+      <div class="property-block"><div class="prop-header"><label>Document</label><span class="pill-mini">RGB / 8-bit</span></div><div class="document-spec"><span id="docDimensions">1200 × 800</span><button class="link-button" id="resizeBtn">Resize</button></div></div>
+      <div class="property-block selection-properties" id="selectionProperties" hidden><div class="prop-header"><label>Selection</label><button class="link-button" id="clearSelectionBtn">Deselect</button></div><div class="selection-actions"><button id="cropSelectionBtn">Crop document</button><button id="copySelectionBtn">Copy</button><button id="deleteSelectionBtn">Delete pixels</button></div></div>
+      <div class="sidebar-note"><svg><use href="#i-layers"/></svg><span>Double-click a layer name to rename it. Drag with the Move tool to reposition layers.</span></div>
+    </div>
+    <div class="sidebar-content" id="tab-adjustments">
+      <div class="panel-header"><div><span class="overline">NON-DESTRUCTIVE</span><h3>Adjustments</h3></div><button class="reset-link" id="resetAdjustBtn">Reset</button></div>
+      <div class="adjust-summary"><span class="adjust-icon">✦</span><div><strong>Refine your layer</strong><p>Adjustments stay editable until you export.</p></div></div>
+      <div class="property-block"><div class="prop-header"><label for="brightnessInput">Brightness</label><span id="brightnessVal">0</span></div><input type="range" data-filter="brightness" id="brightnessInput" min="-90" max="100" value="0"/></div>
+      <div class="property-block"><div class="prop-header"><label for="contrastInput">Contrast</label><span id="contrastVal">0</span></div><input type="range" data-filter="contrast" id="contrastInput" min="-90" max="100" value="0"/></div>
+      <div class="property-block"><div class="prop-header"><label for="saturationInput">Saturation</label><span id="saturationVal">100%</span></div><input type="range" data-filter="saturation" id="saturationInput" min="0" max="300" value="100"/></div>
+      <div class="property-block"><div class="prop-header"><label for="blurInput">Blur</label><span id="blurVal">0px</span></div><input type="range" data-filter="blur" id="blurInput" min="0" max="20" value="0"/></div>
+      <div class="panel-divider"></div>
+      <div class="panel-header"><div><span class="overline">ONE-CLICK LOOKS</span><h3>Presets</h3></div></div>
+      <div class="preset-buttons"><button data-preset="mono">Black & white</button><button data-preset="vintage">Vintage</button><button data-preset="pop">Pop color</button></div>
+      <div class="panel-divider"></div>
+      <div class="panel-header"><div><span class="overline">GEOMETRY</span><h3>Transform layer</h3></div></div>
+      <div class="preset-buttons"><button id="rotateLayerBtn">Rotate 90°</button><button id="flipHorizontalBtn">Flip H</button><button id="flipVerticalBtn">Flip V</button></div>
+      <div class="adjust-note">Adjustments are non-destructive and editable. Rotation and flipping change the selected raster layer.</div>
+    </div>
+    <div class="sidebar-content" id="tab-history">
+      <div class="panel-header"><div><span class="overline">WORKFLOW</span><h3>History</h3></div></div>
+      <div class="history-list" id="historyList"></div>
+      <div class="sidebar-note"><svg><use href="#i-undo"/></svg><span>Up to 20 states kept in memory. Save your project to preserve your work between sessions.</span></div>
+    </div>
+    <div class="sidebar-promo"><div class="promo-illustration">✳</div><div><strong>Make it yours.</strong><span>Every great idea starts with a canvas.</span></div></div>
+  </aside>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog-head"><h2 id="modalTitle">New document</h2><button id="modalClose" class="dialog-close" aria-label="Close"><svg><use href="#i-close"/></svg></button></div><div id="modalContent"></div></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="imageFile" hidden accept="image/png,image/jpeg,image/webp,image/gif"/>
+<input type="file" id="projectFile" hidden accept=".json,.artcrafter.json,application/json"/>
+<script src="core.js"></script><script src="app.js"></script>
+</body>
+</html>
