@@ -2,6 +2,8 @@
 
 **A Photoshop-inspired browser-based raster image editor with independent pixel layers, drawing tools, non-destructive adjustments, and portable editable project files.**
 
+**[Launch the live Art Crafter editor](https://omar-negm-dev.github.io/art-crafter/)** — runs entirely in your browser.
+
 ![Art Crafter desktop editor](assets/preview.png)
 
 Art Crafter is an original independent web app, **not affiliated with Adobe or Photoshop**. Built using HTML5 Canvas, vanilla JavaScript, and CSS with no runtime dependencies and no telemetry. It runs entirely in your browser: your images stay on your computer.
